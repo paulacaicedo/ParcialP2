@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../plantilla.xhtml">
+
+            <ui:define name="Autenticar">
+               <f:event type="preRenderView" listener="#{pageController.ValidarAdministrativo}"></f:event> 
+            </ui:define>
+
+            <ui:define name="Menu">
+                    <div class="sidebar-heading"> Parcial Uno </div>
+            <div class="list-group list-group-flush">
+                
+                 <h:form id="botones">
+                     <h:commandButton value="Ver Usuarios"  styleClass="list-group-item list-group-item-action bg-light" actionListener="#{pageController.verUsuarios()}"/>
+                     <h:commandButton value="Ver Solicitudes" actionListener="#{pageController.verSolicitudes()}"  styleClass="list-group-item list-group-item-action bg-light"/>     
+                     <h:commandButton value="Ver bitacora" actionListener="#{pageController.verBitacora()}"  styleClass="list-group-item list-group-item-action bg-light"/>     
+                </h:form>
+             </div> 
+            </ui:define>
+
+            <ui:define name="Contenido">
+               No hay Bitacora
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

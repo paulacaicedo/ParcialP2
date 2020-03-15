@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../plantilla.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="Autenticar">
+        <f:event type="preRenderView" listener="#{pageController.ValidarEstudiante}"></f:event> 
+    </ui:define>
+
+    <ui:define name="Menu">
+        <div class="sidebar-heading"> Mi Contenido</div>
+            <div class="list-group list-group-flush">
+                <h:form id="botones">
+                    <h:commandButton value=" Realizar solicitud"  styleClass="list-group-item list-group-item-action bg-light" actionListener="#{pageController.registrarSolicitud()}"/>
+                    <h:commandButton value=" Ver Solicitudes" actionListener="#{pageController.verMisSolicitudes()}"  styleClass="list-group-item list-group-item-action bg-light"/>     
+                </h:form>
+                 
+             </div> 
+    </ui:define>
+
+    <ui:define name="Contenido">
+        <h:dataTable value="#{pageController.misSolicitudes}" var="per">
+            <h:column id="Nombre">
+                <h:outputLabel value="#{per.usuario.nombres}"/>   
+            </h:column>
+             <h:column id="Fecha">
+                 <h:outputLabel value="#{per.fecha}"/>   
+            </h:column>
+             <h:column id="Descripcion">
+                 <h:outputLabel value="#{per.descripcion}"/>   
+            </h:column>
+             <h:column id="Prioridad">
+                 <h:outputLabel value="#{per.prioridad}"/>   
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+
+</ui:composition>

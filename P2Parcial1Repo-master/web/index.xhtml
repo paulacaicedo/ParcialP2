@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+   <h:head>
+        <title>Login</title>
+
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <!-- Bootstrap core CSS -->
+
+        <h:outputStylesheet name="css/bootstrap.min.css" />
+
+        <!-- Custom styles for this template -->
+        <h:outputStylesheet name="css/simple-sidebar.css" />
+
+        <h:outputStylesheet name="css/all.css" />
+
+    </h:head>
+    <h:body>
+           <h:form class="form-horizontal">
+       <fieldset>
+
+    <!-- Form Name -->
+    <legend></legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Usuario</label>  
+      <div class="col-md-4">
+          <h:inputText value="#{pageController.correo}" styleClass="form-control input-md" required="true"> </h:inputText>     
+      </div>
+    </div>
+
+    <!-- Password input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="passwordinput">Contraseña</label>
+      <div class="col-md-4">
+          <h:inputSecret value="#{pageController.clave}" styleClass="form-control input-md" required="true"></h:inputSecret>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"> </label>
+      <div class="col-md-4">
+          <h:commandButton value="Ingresar" styleClass="btn btn-success" action="#{pageController.login()}" ></h:commandButton>
+      </div>
+    </div>
+
+    </fieldset>
+    </h:form>
+
+    </h:body>
+</html>
+
